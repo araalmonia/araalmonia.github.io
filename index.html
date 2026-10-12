@@ -36,7 +36,6 @@
       text-align: center;
     }
 
-    /* ---------- Layered background (same as portfolio) ---------- */
     body::before {
       content: '';
       position: fixed; inset: 0; z-index: -3;
@@ -241,7 +240,6 @@
   </main>
 
   <script>
-    /* ---------- Typing role line ---------- */
     (function () {
       var el = document.getElementById('role');
       var roles = ['Cybersecurity Analyst', 'Ethical Hacker', 'Cybersecurity Analyst and Ethical Hacker'];
@@ -254,7 +252,7 @@
         el.textContent = word.slice(0, i);
         var delay = deleting ? 35 : 75;
         if (!deleting && i === word.length) {
-          if (r === roles.length - 1) return;      /* stop on the full title */
+          if (r === roles.length - 1) return;    
           deleting = true; delay = 1100;
         } else if (deleting && i === 0) {
           deleting = false; r++; delay = 300;
@@ -264,7 +262,6 @@
       setTimeout(tick, 1400);
     })();
 
-    /* ---------- Particle network background ---------- */
     (function () {
       var c = document.getElementById('bg-canvas');
       var ctx = c.getContext('2d');
@@ -294,7 +291,7 @@
           if (p.y < 0 || p.y > h) p.vy *= -1;
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.r, 0, 6.283);
-          ctx.fillStyle = 'rgba(61,242,255,0.😎';
+          ctx.fillStyle = 'rgba(61,242,255,0.65)';
           ctx.fill();
           for (var b = a + 1; b < pts.length; b++) {
             var q = pts[b], dx = p.x - q.x, dy = p.y - q.y, d = dx * dx + dy * dy;
@@ -314,7 +311,6 @@
       })();
     })();
 
-    /* ---------- Animated exit, then go to the portfolio ---------- */
     document.getElementById('enter').addEventListener('click', function (e) {
       e.preventDefault();
       var url = this.href;
